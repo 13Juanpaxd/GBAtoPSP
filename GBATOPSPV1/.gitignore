@@ -1,0 +1,19 @@
+# Material del usuario y paquetes creados.
+BIOS GBA/
+*.gba
+*.agb
+*.mb
+out/
+
+# Dependencias descargadas y resultados de compilacion.
+vendor/
+tools/
+native/build/
+**/bin/
+**/obj/
+.vs/
+
+# Archivos temporales.
+*.zip
+*.tmp
+
