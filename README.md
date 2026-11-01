@@ -21,13 +21,25 @@ Incluye:
 
 ## Inicio rapido
 
-1. Descarga este repositorio como ZIP y extraelo, o clonalo con Git.
-2. Ejecuta [Instalar dependencias.bat](Instalar%20dependencias.bat) una vez con conexion a Internet.
-3. Cuando termine, abre [Abrir GBA a PSP.cmd](Abrir%20GBA%20a%20PSP.cmd).
-4. Selecciona tu ROM .gba, tu BIOS de GBA de 16 KiB y pulsa **Crear EBOOT.PBP**.
-5. Copia la carpeta creada dentro de out/PSP/GAME/ a la misma ruta de tu Memory Stick.
+1. Descarga o clona esta carpeta completa.
+2. Abre **Abrir GBA a PSP.cmd** con doble clic.
+3. Selecciona tu ROM `.gba`, tu BIOS GBA propio de 16 KiB y un titulo.
+4. Opcionalmente selecciona icono, informacion, fondo, video PMF y musica.
+5. Pulsa **Crear EBOOT.PBP**.
+6. Copia la carpeta creada dentro de `out/PSP/GAME/` a `PSP/GAME/` de la consola.
 
-El instalador descarga las herramientas de compilacion y el codigo de gpSP Kai en carpetas ignoradas por Git. No debes descargar ni configurar nada adicional manualmente.
+No copies solo `EBOOT.PBP`: el paquete usa archivos junto a el para evitar que
+la ROM quede duplicada y para iniciar mas rapido.
+
+
+
+## En PSP
+
+- El juego abre en 16:9 por defecto. Cambialo a 4:3 desde `SELECT + START`.
+- `SELECT + L` guarda un save state y `SELECT + R` lo carga.
+- Las partidas normales se guardan en `GBA/SAV/game.sav`.
+- La carpeta incluye la pantalla de carga GBA a PSP y sus creditos.
+
 
 ## Requisitos
 
@@ -59,14 +71,34 @@ Todos los paquetes se crean en una sola raiz:
 
 Al iniciar por primera vez, el EBOOT extrae los recursos de ejecucion dentro de su propia carpeta. Los guardados de la ROM se almacenan en GBA/SAV/game.sav y los save states usan las ranuras 0 a 9.
 
-## Privacidad y contenido personal
+## Imagenes y vista previa
 
-Este repositorio no incluye BIOS, ROMs, EBOOTs, compilados ni herramientas descargadas. Esos archivos estan excluidos por [.gitignore](.gitignore).
+La aplicacion muestra una vista previa de los PNG con el mismo ajuste que usa
+la PSP:
+
+- Icono: 144 x 80 px.
+- Informacion: 480 x 272 px.
+- Fondo: 480 x 272 px.
+
+Las imagenes de otros tamanos se centran sin deformarse.
+
+## Musica del menu
+
+Puedes elegir un MP3 directamente. La aplicacion incluye `pspbuild.exe` y lo
+convierte automaticamente al SND0.AT3 que requiere el menu de PSP: ATRAC3 LP4,
+66 kbps, 44.1 kHz, estereo y hasta 55 segundos. Tambien puedes seleccionar un
+archivo `.at3` ya preparado.
+
+
+## No incluido
+
+Por razones legales, este proyecto no contiene ROMs ni BIOS. Debes proporcionar
+tus propias copias locales. Los resultados generados se excluyen mediante
+`.gitignore`.
 
 ## Creditos
 
-- [gpSP Kai](https://github.com/PSP-Archive/unofficial-gpSP-kai), emulador de GBA para PSP.
-- [PSPDev](https://pspdev.github.io/), SDK para PSP.
-- [pspdev-win](https://github.com/dmang-dev/pspdev-win), toolchain de PSP para Windows usado por el instalador.
-
-Hecho por Juanpa.
+- gpSP Kai: https://github.com/PSP-Archive/unofficial-gpSP-kai
+- PSPDev: https://pspdev.github.io/
+- pspbuild: https://github.com/ItsNoHax/pspbuild
+- Interfaz y empaquetador: Juanpa / GBA a PSP
