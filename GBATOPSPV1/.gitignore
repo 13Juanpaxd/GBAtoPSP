@@ -1,0 +1,7 @@
+# Contenido personal y salidas generadas
+BIOS GBA/
+out/
+PSP/
+*.gba
+*.sav
+*.svs
